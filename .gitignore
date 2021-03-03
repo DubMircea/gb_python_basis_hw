@@ -1,0 +1,34 @@
+# idea config
+.idea
+
+# vscode config
+.vscode
+
+# python compiled files
+*.pyc
+
+######### C
+*.o
+*.so
+
+######### MacOS
+.DS_Store
+
+#.git
+.git
+
+
+
+######### Eclipse
+.project
+.pydevproject
+
+######### Python cache
+.cache
+
+######### Other
+*.sublime-project
+*.sublime-workspace
+
+# virtualenv
+.pyenv
