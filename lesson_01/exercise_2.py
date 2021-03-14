@@ -5,7 +5,7 @@ POW_NUMBER = 3
 EVEN_NUMBER = 2
 DIVISOR = 10
 
-for i in range(1000):
+for i in range(1000 + 1):
     if i % EVEN_NUMBER != 0:
         num = i ** POW_NUMBER
         temp_sum = 0
