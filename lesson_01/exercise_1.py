@@ -11,7 +11,7 @@ else:
     seconds = duration_input % SECONDS_IN_MINUTE
     minutes = duration_input // SECONDS_IN_MINUTE
     if minutes <= MINUTES_IN_HOUR:
-        print(f'{minutes} мин {SECONDS_IN_MINUTE - seconds} сек')
+        print(f'{minutes} мин {seconds} сек')
     else:
         hours = minutes // MINUTES_IN_HOUR
         if hours <= HOURS_IN_DAY:
