@@ -22,6 +22,7 @@ def currency_rates(currency_code):
             nominal = element.find('Nominal').text
             name = element.find('Name').text
             value = element.find('Value').text
+
             rates[char_code] = {
                 'num_code': num_code,
                 'nominal': nominal,
