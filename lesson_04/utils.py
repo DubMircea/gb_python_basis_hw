@@ -1,8 +1,9 @@
+import sys
+import xml.etree.ElementTree as Et
+from datetime import datetime
 from decimal import Decimal
 
 import requests
-import xml.etree.ElementTree as ET
-from datetime import datetime
 
 BANK_URL = 'http://www.cbr.ru/scripts/XML_daily.asp'
 
@@ -14,7 +15,7 @@ def currency_rates(currency_code):
     request_response = requests.get(BANK_URL)
 
     if request_response.status_code == 200:
-        root = ET.XML(request_response.content)
+        root = Et.XML(request_response.content)
         date_str = root.attrib.get('Date')
         for element in root:
             num_code = element.find('NumCode').text
@@ -40,3 +41,12 @@ def currency_rates(currency_code):
         res_date = None
 
     return res_value, res_date
+
+
+# if __name__ == '__main__':
+#     if len(sys.argv) > 1:
+#         currency = sys.argv[1]
+#         val, dt = currency_rates(currency)
+#         print(f'{val}, {dt}')
+#     else:
+#         print(f'Sorry, not enough arguments')

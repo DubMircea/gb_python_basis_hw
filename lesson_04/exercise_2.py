@@ -1,7 +1,7 @@
 from decimal import Decimal
 
 import requests
-import xml.etree.ElementTree as ET
+import xml.etree.ElementTree as Et
 
 BANK_URL = 'http://www.cbr.ru/scripts/XML_daily.asp'
 
@@ -12,7 +12,7 @@ def currency_rates(currency_code):
     request_response = requests.get(BANK_URL)
 
     if request_response.status_code == 200:
-        root = ET.XML(request_response.content)
+        root = Et.XML(request_response.content)
         for element in root:
             num_code = element.find('NumCode').text
             char_code = element.find('CharCode').text
